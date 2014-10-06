@@ -1,0 +1,1 @@
+Simple Storm Trident topology, that reads filtered Twitter data, performs bot filtering and prints formatted messages.
