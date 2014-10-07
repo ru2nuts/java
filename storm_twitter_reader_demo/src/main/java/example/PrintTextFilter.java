@@ -15,8 +15,8 @@ public class PrintTextFilter implements Filter {
   public boolean isKeep(TridentTuple objects) {
     System.out.println(
         ">>>" + objects.getStringByField("user_name") +
-        "(from" + objects.getStringByField("location") +
-        ") says:" + StringUtils.substring(objects.getStringByField("tweet_text"), 0, 100));
+        "(from " + objects.getStringByField("location") +
+        ") says:" + StringUtils.remove(StringUtils.substring(objects.getStringByField("tweet_text"), 0, 100),"\n"));
     return true;
   }
 

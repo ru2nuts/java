@@ -67,6 +67,12 @@ public class TwitterSpout extends BaseRichSpout {
   }
 
   @Override
+  public void deactivate() {
+    super.deactivate();
+    if (client != null) client.stop();
+  }
+
+  @Override
   public void close() {
     super.close();
     if (client != null) client.stop();
